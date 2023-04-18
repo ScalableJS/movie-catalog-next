@@ -1,12 +1,12 @@
 import type {Meta, StoryObj} from '@storybook/react';
 
-import ButtonItem from '../components/ButtonItem';
+import SearchItem from '../components/SearchItem';
 import Size from "../types/Size";
 
 // More on how to set up stories at: https://storybook.js.org/docs/7.0/react/writing-stories/introduction
-const meta: Meta<typeof ButtonItem> = {
-    title: 'Example/ButtonItem',
-    component: ButtonItem,
+const meta: Meta<typeof SearchItem> = {
+    title: 'Example/SearchItem',
+    component: SearchItem,
     tags: ['autodocs'],
     argTypes: {
         primary: {
@@ -18,39 +18,43 @@ const meta: Meta<typeof ButtonItem> = {
         size: {
             control: {type: 'select'},
         },
-        onClick: {
-            action: 'clicked'
-        },
     }
 };
 
 export default meta;
-type Story = StoryObj<typeof ButtonItem>;
+type Story = StoryObj<typeof SearchItem>;
 
 // More on writing stories with args: https://storybook.js.org/docs/7.0/react/writing-stories/args
 export const Primary: Story = {
     args: {
         primary: true,
-        label: 'Button',
+        label: 'Search',
     },
 };
 
 export const Secondary: Story = {
     args: {
-        label: 'Button',
+        label: 'Search',
     },
 };
 
 export const Large: Story = {
     args: {
         size: Size.large,
-        label: 'Button',
+        label: 'Search',
+    },
+};
+
+export const Medium: Story = {
+    args: {
+        size: Size.medium,
+        label: 'Search',
     },
 };
 
 export const Small: Story = {
     args: {
         size: Size.small,
-        label: 'Button',
+        label: 'Search',
     },
 };

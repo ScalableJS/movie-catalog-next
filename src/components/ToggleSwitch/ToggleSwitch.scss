@@ -1,0 +1,77 @@
+$bg-color: #555;
+$bg-color-primary: #F65261;
+$bg-color-secondary: #0080ff;
+
+.net-toggle-switch {
+  .label {
+    margin-right: 30px;
+    display: inline-block;
+  }
+
+  label {
+    display: inline-flex;
+    border-radius: 5px;
+    background: #616162;
+    height: 40px;
+    user-select: none;
+
+    input {
+      appearance: none;
+      position: absolute;
+    }
+
+    .label-a,
+    .label-b {
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+      color: #fff;
+    }
+  }
+
+  &--primary {
+    label {
+      background: #616162;
+    }
+
+    .label-a {
+      border-radius: 5px 0 0 5px;
+      background: $bg-color-primary;
+    }
+
+    .label-b {
+      border-radius: 0 5px 5px 0;
+    }
+
+    input:checked ~ .label-a {
+      background: none;
+    }
+
+    input:checked ~ .label-b {
+      background: $bg-color-primary;
+    }
+  }
+
+  &--secondary {
+    label {
+      background: #616162;
+    }
+
+    .label-a {
+      border-radius: 5px 0 0 5px;
+      background: $bg-color-secondary;
+    }
+
+    .label-b {
+      border-radius: 0 5px 5px 0;
+    }
+
+    input:checked ~ .label-a {
+      background: none;
+    }
+
+    input:checked ~ .label-b {
+      background: #0080ff;
+    }
+  }
+}

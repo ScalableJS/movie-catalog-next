@@ -1,0 +1,35 @@
+$bg-color: #555;
+$bg-color-primary: #F65261;
+$bg-color-secondary: #0080ff;
+
+.net-button {
+  border: 0;
+  border-radius: 5px;
+  padding: 0 1em;
+  cursor: pointer;
+
+  &--primary {
+    background: $bg-color-primary;
+    color: #fff;
+  }
+
+  &--secondary {
+    background: $bg-color-secondary;
+    color: #fff;
+  }
+
+  &--large {
+    font-size: 1rem;
+    min-height: 40px;
+  }
+
+  &--medium {
+    font-size: 1rem;
+    min-height: 30px;
+  }
+
+  &--small {
+    font-size: 1rem;
+    min-height: 20px;
+  }
+}

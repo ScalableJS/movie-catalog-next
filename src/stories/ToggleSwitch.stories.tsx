@@ -1,12 +1,12 @@
 import type {Meta, StoryObj} from '@storybook/react';
 
-import ButtonItem from '../components/ButtonItem';
+import ToggleSwitch from '../components/ToggleSwitch';
 import Size from "../types/Size";
 
 // More on how to set up stories at: https://storybook.js.org/docs/7.0/react/writing-stories/introduction
-const meta: Meta<typeof ButtonItem> = {
-    title: 'Example/ButtonItem',
-    component: ButtonItem,
+const meta: Meta<typeof ToggleSwitch> = {
+    title: 'Example/ToggleSwitch',
+    component: ToggleSwitch,
     tags: ['autodocs'],
     argTypes: {
         primary: {
@@ -15,42 +15,35 @@ const meta: Meta<typeof ButtonItem> = {
         label: {
             control: {type: 'text'},
         },
-        size: {
-            control: {type: 'select'},
+        labelA: {
+            control: {type: 'text'},
         },
-        onClick: {
-            action: 'clicked'
+        labelB: {
+            control: {type: 'text'},
         },
+        onChange: {
+            action: 'onChange',
+        }
     }
 };
 
 export default meta;
-type Story = StoryObj<typeof ButtonItem>;
+type Story = StoryObj<typeof ToggleSwitch>;
 
 // More on writing stories with args: https://storybook.js.org/docs/7.0/react/writing-stories/args
 export const Primary: Story = {
     args: {
         primary: true,
-        label: 'Button',
+        label: 'SORT BY',
+        labelA: 'RELEASE DATE',
+        labelB: 'RATING',
     },
 };
 
 export const Secondary: Story = {
     args: {
-        label: 'Button',
-    },
-};
-
-export const Large: Story = {
-    args: {
-        size: Size.large,
-        label: 'Button',
-    },
-};
-
-export const Small: Story = {
-    args: {
-        size: Size.small,
-        label: 'Button',
+        primary: false,
+        labelA: 'RELEASE DATE',
+        labelB: 'RATING',
     },
 };
