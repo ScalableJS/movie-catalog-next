@@ -35,7 +35,6 @@ export default function FindMovieSection({
         label="SEARCH BY"
         labelA="TITLE"
         labelB="GENRE"
-        // v-model="data.isChecked"
       />
     </section>
   );

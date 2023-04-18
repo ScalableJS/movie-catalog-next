@@ -19,7 +19,7 @@ footer {
   min-height: 50px;
 }
 
-#app {
+main {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -32,4 +32,4 @@ main {
   flex: 1;
 }
 
-/*# sourceMappingURL=main.css.map */
+/*# sourceMappingURL=globals.css.map */

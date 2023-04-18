@@ -3,6 +3,8 @@ import InputItem from '../InputItem/InputItem';
 import ButtonItem from '../ButtonItem/ButtonItem';
 import Size from '../../types/Size';
 import React, { useRef, useState } from 'react';
+import './SearchItem.scss';
+import classNames from 'classnames';
 
 interface SearchItemProps {
   label?: string;
@@ -16,15 +18,16 @@ export default function SearchItem({
   primary = false,
   size = Size.medium,
   searchValue = '',
+  label = '',
   onSubmit,
 }: SearchItemProps) {
   const refInput = useRef<HTMLInputElement>(null);
   const mode = primary ? 'primary' : 'secondary';
-  const className = [
+  const className = classNames(
     'net-search-item',
     `net-search-item--${mode}`,
-    `net-search-item--${size}`,
-  ].join(' ');
+    `net-search-item--${size}`
+  );
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -33,8 +36,13 @@ export default function SearchItem({
 
   return (
     <form className={className} onSubmit={handleSubmit}>
-      <InputItem size={size} type="search" value={searchValue} ref={refInput} />
-      <ButtonItem size={size} label="label" primary />
+      <InputItem
+        size={size}
+        type="search"
+        value={searchValue}
+        refInput={refInput}
+      />
+      <ButtonItem size={size} label={label} primary />
     </form>
   );
 }

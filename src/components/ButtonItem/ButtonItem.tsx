@@ -1,6 +1,7 @@
 import React from 'react';
 import './ButtonItem.scss';
 import Size from '../../types/Size';
+import classNames from 'classnames';
 
 interface ButtonItemProps {
   label?: string;
@@ -16,12 +17,12 @@ export default function ButtonItem({
   onClick,
 }: ButtonItemProps) {
   const mode = primary ? 'primary' : 'secondary';
-  const className = [
+  const className = classNames(
     'net-button',
     `net-button--${mode}`,
     `net-button--${size}`,
-    mode,
-  ].join(' ');
+    mode
+  );
 
   return (
     <button type="button" className={className} onClick={onClick}>

@@ -1,12 +1,13 @@
 import React, { HTMLInputTypeAttribute } from 'react';
 import Size from '../../types/Size';
 import './InputItem.scss';
+import classNames from 'classnames';
 
 interface InputItemProps {
   type?: HTMLInputTypeAttribute;
   size?: Size;
   value?: string;
-  ref?: React.Ref<HTMLInputElement>;
+  refInput?: React.Ref<HTMLInputElement>;
   onChange?: () => void;
 }
 
@@ -14,10 +15,10 @@ export default function InputItem({
   type = 'text',
   size = Size.medium,
   value = '',
-  ref,
+  refInput,
   onChange,
 }: InputItemProps) {
-  const className = ['net-input', `net-input--${size}`].join(' ');
+  const className = classNames('net-input', `net-input--${size}`);
 
   return (
     <input
@@ -25,7 +26,7 @@ export default function InputItem({
       type={type}
       onChange={onChange}
       defaultValue={value}
-      ref={ref}
+      ref={refInput}
     />
   );
 }

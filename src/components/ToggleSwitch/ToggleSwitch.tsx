@@ -1,14 +1,16 @@
 'use client';
 
 import './ToggleSwitch.scss';
-import { FormEvent, useState } from 'react';
+import { FormEvent, useRef, useState } from 'react';
+import classNames from 'classnames';
 
 interface ToggleSwitchProps {
   label?: string;
   labelA?: string;
   labelB?: string;
   primary?: boolean;
-  onChange?: () => void;
+  defaultChecked?: boolean;
+  onChange?: (isChecked: boolean) => void;
 }
 
 export default function ToggleSwitch({
@@ -16,25 +18,31 @@ export default function ToggleSwitch({
   labelA = '',
   labelB = '',
   primary = false,
+  defaultChecked = false,
   onChange,
 }: ToggleSwitchProps) {
-  const [checked, setChecked] = useState<boolean>(true);
+  const refCheckbox = useRef<HTMLInputElement>(null);
 
   const mode = primary ? 'primary' : 'secondary';
-  const className = ['net-toggle-switch', `net-toggle-switch--${mode}`].join(
-    ' ',
+  const className = classNames(
+    'net-toggle-switch',
+    `net-toggle-switch--${mode}`
   );
 
   const handleChange = (e: FormEvent<HTMLInputElement>) => {
-    setChecked((prevState) => !prevState);
-    onChange && onChange();
+    onChange && onChange(!!refCheckbox?.current?.checked);
   };
 
   return (
     <div className={className}>
       <span className="label">{label}</span>
       <label>
-        <input type="checkbox" checked={checked} onChange={handleChange} />
+        <input
+          ref={refCheckbox}
+          type="checkbox"
+          defaultChecked={defaultChecked}
+          onChange={handleChange}
+        />
         <span className="label-a">{labelA}</span>
         <span className="label-b">{labelB}</span>
       </label>
