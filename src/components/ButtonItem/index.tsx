@@ -1,2 +1,2 @@
-import ButtonItem from "./ButtonItem"
+import ButtonItem from './ButtonItem';
 export default ButtonItem;
