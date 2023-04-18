@@ -1,0 +1,35 @@
+body {
+  background-color: #555;
+  color: #fff;
+  direction: ltr;
+  font-family: Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+  font-size: 16px;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+}
+
+header {
+  min-height: 50px;
+}
+
+footer {
+  min-height: 50px;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+main {
+  flex: 1;
+}
+
+/*# sourceMappingURL=main.css.map */

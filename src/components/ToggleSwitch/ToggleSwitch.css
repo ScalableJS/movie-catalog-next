@@ -1,0 +1,56 @@
+.net-toggle-switch .label {
+  margin-right: 30px;
+  display: inline-block;
+}
+.net-toggle-switch label {
+  display: inline-flex;
+  border-radius: 5px;
+  background: #616162;
+  height: 40px;
+  user-select: none;
+}
+.net-toggle-switch label input {
+  appearance: none;
+  position: absolute;
+}
+.net-toggle-switch label .label-a,
+.net-toggle-switch label .label-b {
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  color: #fff;
+}
+.net-toggle-switch--primary label {
+  background: #616162;
+}
+.net-toggle-switch--primary .label-a {
+  border-radius: 5px 0 0 5px;
+  background: #f65261;
+}
+.net-toggle-switch--primary .label-b {
+  border-radius: 0 5px 5px 0;
+}
+.net-toggle-switch--primary input:checked ~ .label-a {
+  background: none;
+}
+.net-toggle-switch--primary input:checked ~ .label-b {
+  background: #f65261;
+}
+.net-toggle-switch--secondary label {
+  background: #616162;
+}
+.net-toggle-switch--secondary .label-a {
+  border-radius: 5px 0 0 5px;
+  background: #0080ff;
+}
+.net-toggle-switch--secondary .label-b {
+  border-radius: 0 5px 5px 0;
+}
+.net-toggle-switch--secondary input:checked ~ .label-a {
+  background: none;
+}
+.net-toggle-switch--secondary input:checked ~ .label-b {
+  background: #0080ff;
+}
+
+/*# sourceMappingURL=ToggleSwitch.css.map */
