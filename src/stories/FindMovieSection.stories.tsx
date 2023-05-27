@@ -15,9 +15,7 @@ const meta: Meta<typeof FindMovieSection> = {
     searchBy: {
       control: { type: 'text' },
     },
-    onUpdateFindMovieSection: {
-      action: 'onUpdateFindMovieSection',
-    },
+  
   },
 };
 
@@ -29,6 +27,7 @@ export const Primary: Story = {
   args: {
     searchValue: 'test',
     searchBy: 'title',
+    
   },
 };
 
